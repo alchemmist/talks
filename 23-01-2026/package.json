@@ -13,6 +13,10 @@
     "@slidev/theme-seriph": "latest",
     "slidev-addon-fancy-arrow": "^0.16.0",
     "slidev-theme-alchemmist": "link:../../../.local/share/pnpm/global/5/node_modules/slidev-theme-alchemmist",
-    "vue": "^3.5.26"
+    "vue": "^3.5.27"
+  },
+  "devDependencies": {
+    "prettier": "^3.8.1",
+    "prettier-plugin-slidev": "^1.0.5"
   }
 }
