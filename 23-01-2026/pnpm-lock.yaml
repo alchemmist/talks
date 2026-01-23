@@ -4,6 +4,9 @@ settings:
   autoInstallPeers: true
   excludeLinksFromLockfile: false
 
+overrides:
+  slidev-theme-alchemmist: link:../../../.local/share/pnpm/global/5/node_modules/slidev-theme-alchemmist
+
 importers:
 
   .:
@@ -17,6 +20,12 @@ importers:
       '@slidev/theme-seriph':
         specifier: latest
         version: 0.25.0
+      slidev-addon-fancy-arrow:
+        specifier: ^0.16.0
+        version: 0.16.0(typescript@5.9.3)
+      slidev-theme-alchemmist:
+        specifier: link:../../../.local/share/pnpm/global/5/node_modules/slidev-theme-alchemmist
+        version: link:../../../.local/share/pnpm/global/5/node_modules/slidev-theme-alchemmist
       vue:
         specifier: ^3.5.26
         version: 3.5.27(typescript@5.9.3)
@@ -2226,6 +2235,9 @@ packages:
 
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
+
+  slidev-addon-fancy-arrow@0.16.0:
+    resolution: {integrity: sha512-gO86WtC+TZo1ZXkWKHBBV+UGZ2136ngDAuUliV1hiGpoNtGE1L+mmUwa+MGHmJ+PEMzS/p6ewWPMFi4wR2E32w==}
 
   source-map-js@1.2.1:
     resolution: {integrity: sha512-UXWMKhLOwVKb728IUtQPXxfYU+usdybtUrK/8uGE8CQMvrhOpwvzDBwj0QhSL7MQc7vIsISBG8VQ8+IDQxpfQA==}
@@ -5347,6 +5359,13 @@ snapshots:
       totalist: 3.0.1
 
   sisteransi@1.0.5: {}
+
+  slidev-addon-fancy-arrow@0.16.0(typescript@5.9.3):
+    dependencies:
+      roughjs: 4.6.6
+      vue: 3.5.27(typescript@5.9.3)
+    transitivePeerDependencies:
+      - typescript
 
   source-map-js@1.2.1: {}
 

@@ -1,0 +1,5 @@
+{
+	"dependencies": {
+		"slidev-theme-alchemmist": "link:../../.local/share/pnpm/global/5/node_modules/slidev-theme-alchemmist"
+	}
+}
