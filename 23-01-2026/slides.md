@@ -85,8 +85,8 @@ layout: center
 <ul>
   <li v-click>Cost & Flexibility: Reduces costs, prevents vendor lock-in. Code is modular and customizable.</li>
   <li v-click>Security & Quality: "Many eyes" review code. 15,500+ developers from 1,400 companies contribute to the Linux kernel.</li>
-  <li v-click>Talent & Community: Majority of most pupular prjects were born as OS.</li>
-  <li v-click>Profile: all what you do, it's save as hitory of your experience.</li>
+  <li v-click>Talent & Community: Majority of most popular projects were born as OS.</li>
+  <li v-click>Profile: all what you do, it's save as history of your experience.</li>
 </ul>
 
 <Footer />
@@ -119,13 +119,13 @@ layout: center
 # A Rapidly Expanding Market<MarkerX color="#5D3FD3" title="trends" />
 
 <style scoped>
-#trands-cards {
+#trends-cards {
     display: flex;
     gap: 3em;
 }
 </style>
 
-<div id="trands-cards">
+<div id="trends-cards">
 <Card v-click title="Containers & Kubernetes" mono-head color="#5D3FD3">
 Orchestrates 50% of global containers, projected 85% by 2024. Market to grow 35% annually to $7.5B.
 </Card>

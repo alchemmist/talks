@@ -1,0 +1,28 @@
+name: spellcheck
+on:
+  pull_request:
+  push:
+    branches: [main]
+jobs:
+  cspell:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v5
+        with:
+          persist-credentials: false
+      - name: Install cspell Russian dictionary
+        run: npm install @cspell/dict-ru_ru
+      - uses: streetsidesoftware/cspell-action@v8
+        with:
+          files: "**/*.{md,tex}"
+          check_dot_files: explicit
+          root: "."
+          inline: warning
+          treat_flagged_words_as_errors: false
+          suggestions: true
+          strict: true
+          incremental_files_only: false
+          config: "cspell.config.yaml"
+          verbose: false
+          use_cspell_files: false
+          report: all

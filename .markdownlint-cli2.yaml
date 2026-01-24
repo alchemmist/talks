@@ -1,0 +1,21 @@
+config:
+  no-trailing-spaces: false
+  no-multiple-blanks: false
+  MD033: false
+  MD013: false
+  MD041: false
+  MD003: false
+  MD024: false
+fix: true
+gitignore: true
+frontMatter: "/^---[\\s\\S]*?---$/m"
+globs:
+  - "**/*.md"
+ignores:
+  - "[0-3][0-9]-[0-1][0-9]-[0-9][0-9][0-9][0-9]/**/*.md"
+noBanner: false
+noInlineConfig: true
+noProgress: false
+outputFormatters:
+  - - markdownlint-cli2-formatter-default
+showFound: true
