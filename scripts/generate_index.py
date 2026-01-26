@@ -52,10 +52,12 @@ h1{{font-size:2.2rem;margin-bottom:2rem}}
 .date{{opacity:.6;font-size:.9rem}}
 .links a{{margin-right:15px;text-decoration:none;color:#6ab0ff}}
 .links a:hover{{text-decoration:underline}}
+h1 a{{text-decoration:underline;color:rgba(255, 255, 255, 0.9);text-decoration-style: dotted;}}
+h1 a:hover{{text-decoration:underline;color:rgba(255, 255, 255, 0.8);text-decoration-style: dotted;}}
 </style>
 </head>
 <body>
-<h1>Public Talks</h1>
+<h1>Public <a href="https://github.com/alchemmist/talks">Talks</a></h1>
 {html_items}
 </body>
 </html>"""
