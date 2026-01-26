@@ -46,7 +46,7 @@ html = f"""<!DOCTYPE html>
 <meta charset="UTF-8" />
 <title>Talks</title>
 <style>
-body{{font-family:system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;background:#0f1115;color:#e6e6e6}}
+body{{font-family:monospace, system-ui,-apple-system,Segoe UI,Roboto,sans-serif;max-width:900px;margin:40px auto;padding:0 20px;background:#0f1115;color:#e6e6e6}}
 h1{{font-size:2.2rem;margin-bottom:2rem}}
 .talk{{margin-bottom:2.5rem;padding-bottom:1.5rem;border-bottom:1px solid #2a2d34}}
 .date{{opacity:.6;font-size:.9rem}}

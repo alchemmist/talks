@@ -12,7 +12,7 @@ lint:
 	markdownlint-cli2 . --fix
 
 spell:
-	-cspell-cli "**/*.{md}"
+	-cspell-cli "**/*.md"
 
 build: $(PDFDIR) $(PAGESDIR)
 	@for d in $(DATES); do \

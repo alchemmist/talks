@@ -3,6 +3,9 @@ import:
 language: en, en-US, ru, ru-ru
 $schema: https://raw.githubusercontent.com/streetsidesoftware/cspell/main/cspell.schema.json
 version: "0.2"
+files:
+  - "**/*.{md}"
+  - "*.{md}"
 dictionaryDefinitions:
   # - name: ru-project-words
   #   path: "./project-words.ru.txt"
@@ -19,3 +22,4 @@ ignorePaths:
   - ".venv"
   - "/project-words.en.txt"
   - "/project-words.ru.txt"
+  - "assets"
