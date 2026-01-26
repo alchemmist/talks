@@ -1,0 +1,58 @@
+name: Build Talks and Deploy Pages
+
+on:
+  push:
+    branches: ["main"]
+  workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: pages
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: yarn
+
+      - name: Install root deps
+        run: yarn install --frozen-lockfile
+
+      - name: Install all talk deps
+        run: |
+          for d in [0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]; do
+            if [ -f "$d/package.json" ]; then
+              cd "$d"
+              yarn install --frozen-lockfile
+              cd ..
+            fi
+          done
+
+      - name: Install Playwright
+        run: |
+          npx playwright install --with-deps chromium
+
+      - name: Build slides
+        run: make build OUTDIR=build
+
+      - name: Generate index
+        run: python3 scripts/generate_index.py
+
+      - uses: actions/configure-pages@v5
+
+      - uses: actions/upload-pages-artifact@v3
+        with:
+          path: build/pages
+
+      - uses: actions/deploy-pages@v4
