@@ -34,3 +34,12 @@ $(PAGESDIR):
 
 clean:
 	rm -rf $(OUTDIR)
+
+private-build:
+	$(MAKE) -C private build
+
+private-lint:
+	$(MAKE) -C private lint
+
+private-spell:
+	$(MAKE) -C private spell
