@@ -6,4 +6,4 @@ minimumReleaseAgeExclude:
   - '@slidev/client@52.19.1'
   - '@slidev/parser@52.19.1'
   - '@slidev/types@52.19.1'
-  - slidev-theme-alchemmist@0.3.0
+  - slidev-theme-alchemmist@0.3.0 || 0.3.1
