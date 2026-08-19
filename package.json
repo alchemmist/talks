@@ -1,6 +1,7 @@
 {
+	"packageManager": "pnpm@11.22.0",
 	"devDependencies": {
-		"playwright-chromium": "^1.58.0",
+		"@playwright/test": "^1.62.1",
 		"prettier": "^3.8.1",
 		"prettier-plugin-slidev": "^1.0.5"
 	},

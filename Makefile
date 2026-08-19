@@ -19,10 +19,10 @@ build: $(PDFDIR) $(PAGESDIR)
 		if [ -f $$d/slides.md ]; then \
 			echo "Building $$d..."; \
 			base=$$(basename $$d); \
-			( cd $$d && yarn run slidev export slides.md --format pdf --output "../$(PDFDIR)/$$base.pdf" ); \
+			( cd $$d && pnpm exec slidev export slides.md --format pdf --output "../$(PDFDIR)/$$base.pdf" ); \
 			outdir="../$(PAGESDIR)/$$base"; \
 			mkdir -p $$outdir; \
-			( cd $$d && yarn run slidev build slides.md --out $$outdir --base "/talks/$$base/" ); \
+			( cd $$d && pnpm exec slidev build slides.md --out $$outdir --base "/talks/$$base/" ); \
 		fi \
 	done
 

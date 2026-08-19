@@ -1,2 +1,9 @@
-overrides:
-  slidev-theme-alchemmist: link:../../../.local/share/pnpm/global/5/node_modules/slidev-theme-alchemmist
+allowBuilds:
+  playwright-chromium: true
+  esbuild: true
+minimumReleaseAgeExclude:
+  - '@slidev/cli@52.19.1'
+  - '@slidev/client@52.19.1'
+  - '@slidev/parser@52.19.1'
+  - '@slidev/types@52.19.1'
+  - slidev-theme-alchemmist@0.3.0
