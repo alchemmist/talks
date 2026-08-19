@@ -23,18 +23,20 @@ jobs:
 
       - uses: actions/setup-node@v4
         with:
-          node-version: 20
-          cache: yarn
+          node-version: 24
+          cache: pnpm
+
+      - uses: pnpm/action-setup@v4
 
       - name: Install root deps
-        run: yarn install --frozen-lockfile
+        run: pnpm install --frozen-lockfile
 
       - name: Install all talk deps
         run: |
           for d in [0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9]; do
             if [ -f "$d/package.json" ]; then
               cd "$d"
-              yarn install --frozen-lockfile
+              pnpm install --frozen-lockfile
               cd ..
             fi
           done
