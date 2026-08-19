@@ -14,10 +14,9 @@ date: January 23th, 2026
 remoteAssets: false
 layout: intro
 themeConfig:
-  paginationPosition: top-right
+  paginationX: r
+  paginationY: t
   paginationPagesDisabled: []
-  footerLogo: /assets/cu-logo.svg
-  footerLogoAlt: Central University
 ---
 
 # Open Source as a driver of modern software
@@ -48,6 +47,7 @@ layout: center
 | <code style="color:#5D3FD3">trends</code>     | The Market & Future Trends                |
 | <code style="color:#0096FF">qa</code>         | Conclusion and discussion                 |
 
+<Footer />
 
 ---
 layout: center
@@ -67,11 +67,17 @@ $9.7 billion by 2024."
   type="Article"
 />
 
+<Footer />
 
 ---
 layout: center
-contentWidth: 50%
 ---
+
+<style scoped>
+:deep(.my-auto) {
+    max-width: 50%;
+}
+</style>
 
 
 # Why Companies Embrace Open Source<MarkerX color="#50C878" title="advantages" />
@@ -83,11 +89,17 @@ contentWidth: 50%
   <li v-click>Profile: all what you do, it's save as history of your experience.</li>
 </ul>
 
+<Footer />
 
 ---
 layout: center
-contentWidth: 50%
 ---
+
+<style scoped>
+:deep(.my-auto) {
+    max-width: 50%;
+}
+</style>
 
 # Navigating the Challenges<MarkerX color="#D22B2B" title="risks" />
 
@@ -98,6 +110,7 @@ contentWidth: 50%
   <li v-click><strong>Supply Chain Attacks:</strong> Malicious actors can infiltrate popular projects (like the <strong>log4j</strong> incident) affecting millions.</li>
 </ul>
 
+<Footer />
 
 ---
 layout: center
@@ -126,6 +139,7 @@ Mix of free OSS core + paid proprietary features/services (<i>e.g., Red Hat, Git
 </Card>
 </div>
 
+<Footer />
 
 ---
 layout: center
