@@ -12,7 +12,7 @@ jobs:
           persist-credentials: false
       - name: Install cspell Russian dictionary
         run: npm install @cspell/dict-ru_ru
-      - uses: streetsidesoftware/cspell-action@v8
+      - uses: streetsidesoftware/cspell-action@v9
         with:
           files: "**/*.{md,tex}"
           check_dot_files: explicit
