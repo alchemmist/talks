@@ -1,5 +1,7 @@
 SHELL := /usr/bin/env bash
 
+.PHONY: all lint spell build clean private-build private-lint private-spell new-public new-private
+
 DATES := $(wildcard [0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9])
 OUTDIR ?= build
 
@@ -43,3 +45,9 @@ private-lint:
 
 private-spell:
 	$(MAKE) -C private spell
+
+new-public:
+	python3 scripts/new_talk.py public
+
+new-private:
+	python3 scripts/new_talk.py private
