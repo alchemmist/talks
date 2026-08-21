@@ -566,11 +566,14 @@
   max-width: 57rem;
 }
 
-.final-links a {
+.final-link {
   align-items: center;
   color: #111;
   display: flex;
   flex-direction: column;
+}
+
+.final-links a {
   text-decoration: none;
 }
 
@@ -603,12 +606,12 @@
   padding: 0;
 }
 
-.final-links a.primary small,
-.final-links a.primary code {
+.final-link.primary small,
+.final-link.primary code {
   color: var(--fq-accent);
 }
 
-.final-links a.primary img {
+.final-link.primary img {
   border-color: var(--fq-accent);
 }
 
