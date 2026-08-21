@@ -16,7 +16,7 @@
     "@slidev/theme-default": "latest",
     "@slidev/theme-seriph": "latest",
     "slidev-addon-fancy-arrow": "^0.18.0",
-    "slidev-theme-alchemmist": "github:alchemmist/slidev-theme-alchemmist#7794988",
+    "slidev-theme-alchemmist": "github:alchemmist/slidev-theme-alchemmist#5c586e1",
     "vue": "^3.5.27"
   },
   "devDependencies": {
