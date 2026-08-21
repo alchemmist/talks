@@ -1,3 +1,4 @@
+import base64
 import html
 import os
 import re
@@ -6,6 +7,9 @@ from datetime import datetime
 
 root = "build/pages"
 pdf_root = "build/pdf"
+
+with open("assets/alchemmist-logo.svg", "rb") as file:
+    logo = base64.b64encode(file.read()).decode("ascii")
 
 
 def read_metadata(name: str) -> tuple[str, str]:
@@ -158,10 +162,9 @@ page = f"""<!DOCTYPE html>
       text-decoration: none;
     }}
 
-    .brand-symbol {{
-      font-size: 1.8rem;
-      font-weight: normal;
-      line-height: 1;
+    .brand-logo {{
+      height: 2rem;
+      width: 2rem;
     }}
 
     .source-link {{
@@ -283,7 +286,7 @@ page = f"""<!DOCTYPE html>
   <main class="page">
     <header class="site-header">
       <a class="brand" href="https://alchemmist.xyz">
-        <span class="brand-symbol" aria-hidden="true">☼</span>
+        <img class="brand-logo" src="data:image/svg+xml;base64,{logo}" alt="" />
         <span>alchemmist</span>
       </a>
       <a class="source-link" href="https://github.com/alchemmist/talks">GitHub</a>
