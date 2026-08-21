@@ -97,7 +97,7 @@ split: 36%
   <Sticker v-click><b>54 дня</b><span>от первого PR до закрытия финального тикета</span></Sticker>
   <Sticker v-click><b>66 корнер-кейсов</b><span>отлиты в регрессионные тесты</span></Sticker>
   <Sticker v-click><b>2 итерации</b><span>переформатирования всей кодовой базы</span></Sticker>
-  <Sticker v-click><b>git clone llvm</b><span>модифицированный clang-format</span></Sticker>
+  <Sticker v-click><b><span class="mono-text">git clone llvm</span></b><span>модифицированный clang-format</span></Sticker>
   <Sticker v-click><b>5 тикетов</b><span>в поддержку DevTools</span></Sticker>
   <Sticker v-click><b>1&#8239;225 слов</b><span>добавлено в документацию о форматировании и стиле</span></Sticker>
 </StickerBoard>
