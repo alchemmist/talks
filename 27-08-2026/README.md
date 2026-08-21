@@ -23,6 +23,19 @@
 pnpm dev
 ```
 
+Для разработки темы с hot reload запустите из корня репозитория:
+
+```bash
+make dev-theme TALK=27-08-2026
+```
+
+Команда подключает соседний репозиторий `slidev-theme-alchemmist` через symlink,
+не меняя `package.json` и lockfile. Вернуться к закреплённой GitHub-версии темы:
+
+```bash
+make restore-theme TALK=27-08-2026
+```
+
 Сборка и проверки выполняются из корня публичного репозитория:
 
 ```bash

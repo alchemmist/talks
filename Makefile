@@ -1,12 +1,13 @@
 SHELL := /usr/bin/env bash
 
-.PHONY: all lint spell build clean private-build private-lint private-spell new-public new-private
+.PHONY: all lint spell build clean dev-theme restore-theme private-build private-lint private-spell new-public new-private
 
 DATES := $(wildcard [0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9])
 OUTDIR ?= build
 
 PDFDIR := $(OUTDIR)/pdf
 PAGESDIR := $(OUTDIR)/pages
+THEME_DIR ?= ../slidev-theme-alchemmist
 
 all: spell lint
 
@@ -36,6 +37,20 @@ $(PAGESDIR):
 
 clean:
 	rm -rf $(OUTDIR)
+
+dev-theme:
+	@test -n "$(TALK)" || (echo "Usage: make dev-theme TALK=27-08-2026" && exit 1)
+	@test -f "$(TALK)/slides.md" || (echo "Talk not found: $(TALK)" && exit 1)
+	@test -f "$(THEME_DIR)/package.json" || (echo "Theme not found: $(THEME_DIR)" && exit 1)
+	cd "$(TALK)" && pnpm install --frozen-lockfile
+	rm -f "$(TALK)/node_modules/slidev-theme-alchemmist"
+	ln -s "$(abspath $(THEME_DIR))" "$(TALK)/node_modules/slidev-theme-alchemmist"
+	cd "$(TALK)" && pnpm dev
+
+restore-theme:
+	@test -n "$(TALK)" || (echo "Usage: make restore-theme TALK=27-08-2026" && exit 1)
+	@test -f "$(TALK)/slides.md" || (echo "Talk not found: $(TALK)" && exit 1)
+	cd "$(TALK)" && pnpm install --force --frozen-lockfile
 
 private-build:
 	$(MAKE) -C private build
