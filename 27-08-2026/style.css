@@ -612,40 +612,6 @@
   border-color: var(--fq-accent);
 }
 
-.source-timeline {
-  display: grid;
-  gap: 0.7rem;
-  grid-template-columns: repeat(3, 1fr);
-}
-
-.source-timeline > div {
-  border: 1px solid #8886;
-  border-radius: 0.6rem;
-  display: flex;
-  flex-direction: column;
-  min-height: 6.4rem;
-  padding: 0.8rem;
-}
-
-.source-timeline b,
-.source-timeline small {
-  font-family: var(--slidev-code-font-family);
-}
-
-.source-timeline span {
-  flex: 1;
-  margin: 0.4rem 0;
-}
-
-.source-timeline small {
-  opacity: 0.55;
-}
-
-.center-text {
-  margin-top: 1rem;
-  text-align: center;
-}
-
 .context-sticker-board {
   --alchemmist-sticker-yellow: color-mix(in srgb, #fff1a8 72%, transparent);
   --alchemmist-sticker-blue: color-mix(in srgb, #d9edff 72%, transparent);
