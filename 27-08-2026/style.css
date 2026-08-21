@@ -577,18 +577,8 @@
   text-decoration: none;
 }
 
-.final-links small {
-  color: #777;
-  font-family: var(--slidev-code-font-family);
-  font-size: 0.68rem;
-  letter-spacing: 0.08em;
-  margin-bottom: 0.7rem;
-}
-
 .final-links img {
   background: #fff;
-  border: 1px solid #8884;
-  border-radius: 0.7rem;
   height: 12.5rem;
   padding: 0.7rem;
   width: 12.5rem;
@@ -604,15 +594,6 @@
   color: #666;
   font-size: 0.74rem;
   padding: 0;
-}
-
-.final-link.primary small,
-.final-link.primary code {
-  color: var(--fq-accent);
-}
-
-.final-link.primary img {
-  border-color: var(--fq-accent);
 }
 
 .context-sticker-board {

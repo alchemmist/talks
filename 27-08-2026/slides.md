@@ -337,19 +337,16 @@ layout: center
 
 <div class="final-links">
   <div class="final-link">
-    <small>УЧАСТВОВАТЬ</small>
     <img src="/assets/qr-format-quorum-github.svg" alt="QR-код репозитория Format Quorum на GitHub" />
     <b>GitHub</b>
     <a href="https://github.com/alchemmist/format-quorum" target="_blank" rel="noopener noreferrer"><code>alchemmist/format-quorum</code></a>
   </div>
-  <div class="final-link primary">
-    <small>ПОПРОБОВАТЬ</small>
+  <div class="final-link">
     <img src="/assets/qr-format-quorum-demo.svg" alt="QR-код live demo Format Quorum" />
     <b>Live demo</b>
     <a href="https://fq.alchemmist.xyz" target="_blank" rel="noopener noreferrer"><code>fq.alchemmist.xyz</code></a>
   </div>
   <div class="final-link">
-    <small>ЧИТАТЬ</small>
     <img src="/assets/qr-alchemmist-blog.svg" alt="QR-код блога Антона Гришина" />
     <b>Блог</b>
     <a href="https://alchemmist.xyz" target="_blank" rel="noopener noreferrer"><code>alchemmist.xyz</code></a>
