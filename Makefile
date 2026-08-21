@@ -1,6 +1,6 @@
 SHELL := /usr/bin/env bash
 
-.PHONY: all lint spell build clean dev-theme restore-theme private-build private-lint private-spell new-public new-private
+.PHONY: all lint spell build clean dev dev-theme restore-theme private-build private-lint private-spell new-public new-private
 
 DATES := $(wildcard [0-9][0-9]-[0-9][0-9]-[0-9][0-9][0-9][0-9])
 OUTDIR ?= build
@@ -8,6 +8,7 @@ OUTDIR ?= build
 PDFDIR := $(OUTDIR)/pdf
 PAGESDIR := $(OUTDIR)/pages
 THEME_DIR ?= ../slidev-theme-alchemmist
+TALK ?= 27-08-2026
 
 all: spell lint
 
@@ -38,8 +39,7 @@ $(PAGESDIR):
 clean:
 	rm -rf $(OUTDIR)
 
-dev-theme:
-	@test -n "$(TALK)" || (echo "Usage: make dev-theme TALK=27-08-2026" && exit 1)
+dev dev-theme:
 	@test -f "$(TALK)/slides.md" || (echo "Talk not found: $(TALK)" && exit 1)
 	@test -f "$(THEME_DIR)/package.json" || (echo "Theme not found: $(THEME_DIR)" && exit 1)
 	cd "$(TALK)" && pnpm install --frozen-lockfile
@@ -48,7 +48,6 @@ dev-theme:
 	cd "$(TALK)" && pnpm dev
 
 restore-theme:
-	@test -n "$(TALK)" || (echo "Usage: make restore-theme TALK=27-08-2026" && exit 1)
 	@test -f "$(TALK)/slides.md" || (echo "Talk not found: $(TALK)" && exit 1)
 	cd "$(TALK)" && pnpm install --force --frozen-lockfile
 
