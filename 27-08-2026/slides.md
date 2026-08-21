@@ -332,26 +332,31 @@ layout: center
 -->
 
 ---
-layout: center
+layout: qr-links
 ---
 
-<div class="final-links">
-  <div class="final-link">
-    <img src="/assets/qr-format-quorum-github.svg" alt="QR-код репозитория Format Quorum на GitHub" />
-    <b>GitHub</b>
-    <a href="https://github.com/alchemmist/format-quorum" target="_blank" rel="noopener noreferrer"><code>alchemmist/format-quorum</code></a>
-  </div>
-  <div class="final-link">
-    <img src="/assets/qr-format-quorum-demo.svg" alt="QR-код live demo Format Quorum" />
-    <b>Live demo</b>
-    <a href="https://fq.alchemmist.xyz" target="_blank" rel="noopener noreferrer"><code>fq.alchemmist.xyz</code></a>
-  </div>
-  <div class="final-link">
-    <img src="/assets/qr-alchemmist-blog.svg" alt="QR-код блога Антона Гришина" />
-    <b>Блог</b>
-    <a href="https://alchemmist.xyz" target="_blank" rel="noopener noreferrer"><code>alchemmist.xyz</code></a>
-  </div>
-</div>
+<QrLink
+  icon-src="/assets/format-quorum-favicon.svg"
+  href="https://fq.alchemmist.xyz"
+  label="Format Quorum"
+  alt="QR-код live demo Format Quorum"
+/>
+
+::right::
+
+<QrLink
+  icon-src="/assets/github-logo.svg"
+  href="https://github.com/alchemmist/format-quorum"
+  display="alchemmist/format-quorum"
+  label="GitHub"
+  alt="QR-код репозитория Format Quorum на GitHub"
+/>
+<QrLink
+  icon-src="/assets/alchemmist-logo.svg"
+  href="https://alchemmist.xyz"
+  label="Блог"
+  alt="QR-код блога Антона Гришина"
+/>
 
 <!--
 Оставляю экран открытым для вопросов. Кликабельны только адреса под QR-кодами.
