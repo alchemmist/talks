@@ -8,10 +8,11 @@ info: |
   Created by Anton Grishin as part of the CPM and CU 2026 educational project.
 drawings:
   persist: false
-favicon: "https://cdn.jsdelivr.net/gh/alchemmist/blog@main/site/static/favicon.ico"
+favicon: /assets/alchemmist-logo.svg
 duration: 35min
 date: January 23th, 2026
 remoteAssets: false
+pwa: build
 layout: intro
 themeConfig:
   paginationX: r

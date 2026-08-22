@@ -8,8 +8,9 @@ info: |
   Presentation description.
 drawings:
   persist: false
-favicon: "<https://cdn.jsdelivr.net/gh/alchemmist/blog@main/site/static/favicon.ico>"
+favicon: /assets/alchemmist-logo.svg
 remoteAssets: false
+pwa: build
 layout: intro
 themeConfig:
   paginationX: r

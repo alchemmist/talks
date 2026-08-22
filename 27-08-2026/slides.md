@@ -11,6 +11,7 @@ drawings:
 duration: 20min
 date: 27 августа 2026
 remoteAssets: false
+pwa: build
 themeConfig:
   paginationX: r
   paginationY: t
