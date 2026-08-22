@@ -9,6 +9,7 @@ PDFDIR := $(OUTDIR)/pdf
 PAGESDIR := $(OUTDIR)/pages
 THEME_DIR ?= ../slidev-theme-alchemmist
 TALK ?= 27-08-2026
+DEV_PORT ?= 3030
 
 all: spell lint
 
@@ -42,10 +43,11 @@ clean:
 dev dev-theme:
 	@test -f "$(TALK)/slides.md" || (echo "Talk not found: $(TALK)" && exit 1)
 	@test -f "$(THEME_DIR)/package.json" || (echo "Theme not found: $(THEME_DIR)" && exit 1)
+	@if lsof -nP -iTCP:$(DEV_PORT) -sTCP:LISTEN >/dev/null 2>&1; then echo "Port $(DEV_PORT) is already in use; stop that process before starting Slidev"; exit 1; fi
 	cd "$(TALK)" && pnpm install --frozen-lockfile
 	rm -f "$(TALK)/node_modules/slidev-theme-alchemmist"
 	ln -s "$(abspath $(THEME_DIR))" "$(TALK)/node_modules/slidev-theme-alchemmist"
-	cd "$(TALK)" && pnpm dev
+	cd "$(TALK)" && pnpm dev -- --port $(DEV_PORT)
 
 restore-theme:
 	@test -f "$(TALK)/slides.md" || (echo "Talk not found: $(TALK)" && exit 1)
