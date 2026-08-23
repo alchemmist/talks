@@ -21,8 +21,8 @@ importers:
         specifier: ^0.18.0
         version: 0.18.0(typescript@6.0.3)
       slidev-theme-alchemmist:
-        specifier: github:alchemmist/slidev-theme-alchemmist#e1ec81e
-        version: https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/e1ec81e12af2c93f1750485586cdaf2d39e4aa05(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.41(typescript@6.0.3))
+        specifier: github:alchemmist/slidev-theme-alchemmist#f3a1070
+        version: https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.41(typescript@6.0.3))
       vue:
         specifier: ^3.5.27
         version: 3.5.41(typescript@6.0.3)
@@ -3677,8 +3677,8 @@ packages:
   slidev-addon-fancy-arrow@0.18.0:
     resolution: {integrity: sha512-EMCg+wf5E7j7I3JgHeW2vocjZm7fkht8AZgxIrn+tvO9uR2nt54zDTnrrcFXoz4Om7jtg3KVVxHiLkI6RH5fsA==}
 
-  slidev-theme-alchemmist@https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/e1ec81e12af2c93f1750485586cdaf2d39e4aa05:
-    resolution: {gitHosted: true, integrity: sha512-JBr28aKk6l512d7B/Ng0yAUmE7pWYmrC6e+tiJDHpX3tV+ISwae4tDnFqmXLYq5frHkUH9ySZtoirRyARsSGMQ==, tarball: https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/e1ec81e12af2c93f1750485586cdaf2d39e4aa05}
+  slidev-theme-alchemmist@https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700:
+    resolution: {gitHosted: true, integrity: sha512-PxHOhqwTYgsVypHyKwVjOGI/1ycYPk6gZ2q6hf3x5U2sftB+qXHrY9reW2eKdOjVySnmYAPmUs4ValfmVPfGEQ==, tarball: https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700}
     version: 0.4.0
     engines: {node: '>=24'}
     peerDependencies:
@@ -8710,7 +8710,7 @@ snapshots:
     transitivePeerDependencies:
       - typescript
 
-  slidev-theme-alchemmist@https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/e1ec81e12af2c93f1750485586cdaf2d39e4aa05(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.41(typescript@6.0.3)):
+  slidev-theme-alchemmist@https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.41(typescript@6.0.3)):
     dependencies:
       '@slidev/client': 52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
       '@slidev/types': 52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
