@@ -103,6 +103,16 @@ split: 36%
   <Sticker v-click><b>1&#8239;225 слов</b><span>добавлено в документацию о форматировании и стиле</span></Sticker>
 </StickerBoard>
 
+<style scoped>
+.context-list > div > div {
+  font-size: calc(1.08rem + 1px);
+}
+
+.context-list > div > span {
+  font-size: calc(0.84rem + 1px);
+}
+</style>
+
 <!--
 54 дня — с 3 июня, когда был создан первый config PR 13704587, до 27 июля, когда после merge PR 14610373 закрыли LOGS-5979.
 У PR 13704587 было 10 опубликованных ревизий.
@@ -129,6 +139,12 @@ layout: center
 
 </v-clicks>
 
+<style scoped>
+li {
+  font-size: calc(1em + 1px);
+}
+</style>
+
 <!--
 Клик 1: реальные проблемы форматирования обнаруживаются на коде команды, а не на одном специально подготовленном примере.
 Клик 2: нужно быстро менять конфигурацию, версию или сам форматтер и сразу видеть результат.
@@ -148,19 +164,19 @@ footer: false
 <Image class="fq-solution-image" src="/assets/format-quorum-demo.png" width="800%"/>
 
 <div v-click="1" class="fq-tour-label" style="left: 210px; top: 88px;">Песочница</div>
-<FancyArrow v-click="1" color="#e65353" width="3" head-size="13" roughness="0.6" arc="0.12" duration="500" from="(210, 111)" to="(210, 200)" />
+<FancyArrow v-if="$clicks >= 1" color="#e65353" width="3" head-size="13" roughness="0.6" arc="0.12" duration="500" from="(210, 111)" to="(210, 200)" />
 
 <div v-click="2" class="fq-tour-label" style="left: 280px; top: 88px;">Тесты</div>
-<FancyArrow v-click="2" color="#e65353" width="3" head-size="13" roughness="0.6" arc="-0.12" duration="500" from="(280, 111)" to="(280, 200)" />
+<FancyArrow v-if="$clicks >= 2" color="#e65353" width="3" head-size="13" roughness="0.6" arc="-0.12" duration="500" from="(280, 111)" to="(280, 200)" />
 
 <div v-click="3" class="fq-tour-label" style="left: 333px; top: 88px;">Конфиг</div>
-<FancyArrow v-click="3" color="#e65353" width="3" head-size="13" roughness="0.6" arc="0.12" duration="500" from="(333, 111)" to="(333, 200)" />
+<FancyArrow v-if="$clicks >= 3" color="#e65353" width="3" head-size="13" roughness="0.6" arc="0.12" duration="500" from="(333, 111)" to="(333, 200)" />
 
 <div v-click="4" class="fq-tour-label" style="left: 518px; top: 88px;">Выбор инструмента</div>
-<FancyArrow v-click="4" color="#e65353" width="3" head-size="13" roughness="0.6" arc="0.1" duration="500" from="(518, 111)" to="(518, 200)" />
+<FancyArrow v-if="$clicks >= 4" color="#e65353" width="3" head-size="13" roughness="0.6" arc="0.1" duration="500" from="(518, 111)" to="(518, 200)" />
 
 <div v-click="5" class="fq-tour-label" style="left: 845px; top: 88px;">Запустить и сравнить</div>
-<FancyArrow v-click="5" color="#e65353" width="3" head-size="13" roughness="0.6" arc="-0.12" duration="500" from="(845, 111)" to="(845, 200)" />
+<FancyArrow v-if="$clicks >= 5" color="#e65353" width="3" head-size="13" roughness="0.6" arc="-0.12" duration="500" from="(845, 111)" to="(845, 200)" />
 
 <style scoped>
 .fq-solution-image {
@@ -323,6 +339,12 @@ layout: center
 
 </v-clicks>
 
+<style scoped>
+li {
+  font-size: calc(1em + 1px);
+}
+</style>
+
 <!--
 Клик 1: для голосований нужна идентичность — авторизация, командные пространства и роли. Это же защищает от небезопасных анонимных изменений и загрузок.
 Клик 2: поверх проблемного кейса задаём конкретный вопрос, предлагаем варианты результата и собираем голоса до кворума.
@@ -375,6 +397,12 @@ layout: qr-links
   href="https://t.me/alchemmist"
   label="Text me"
   alt="QR-код Telegram @alchemmist"
+/>
+
+<!--
+Оставляю экран открытым для вопросов. Кликабельны только подписи над QR-кодами.
+-->
+mmist"
 />
 
 <!--
