@@ -4,8 +4,8 @@ addons:
   - fancy-arrow
 title: "Приручаем clang-format: как появился Format Quorum — Антон Гришин"
 info: |
-  Приватный доклад о том, как настройка форматирования для команды
-  превратилась в инструмент для проверки правил и коллективного выбора.
+  Внутренний доклад в Яндексе о новом проекте Format Quorum — инструменте
+  для экспериментов с автоформатированием, фиксации регрессий и согласования стиля.
 drawings:
   persist: false
 duration: 20min
@@ -33,7 +33,7 @@ pagination: false
 </div>
 
 <!--
-Открываю с личной истории: я хотел настроить один formatter, а в итоге написал отдельный инструмент.
+Открываю с личной истории: я хотел настроить один форматтер, а в итоге написал отдельный инструмент.
 Не обещаю идеальный стиль. Покажу, как сделать спор о стиле проверяемым.
 -->
 
@@ -51,7 +51,7 @@ layout: center
 
 <!--
 Источники: 47 внутренних PR — 414 680 добавлений и 340 127 удалений суммарно. Полный список и расчёт: scripts/sum_arcanum_diffstats.py.
-Это не метрика продуктивности, а масштаб необратимого для ревью решения.
+Это не метрика продуктивности, а масштаб изменения, которое невозможно осмысленно проверить построчно.
 -->
 
 ---
@@ -86,17 +86,17 @@ split: 36%
 ::left::
 
 <div class="context-list">
-  <div><div>Большая <span class="mono-text">C++</span> кодовая база</div><span>тысячи файлов в общем репозитории на несколько команд</span></div>
-  <div><div>Десятки разработчиков</div><span>в командах с сформированным стилем</span></div>
+  <div><div>Большая <span class="mono-text">C++</span> кодовая база</div><span>тысячи файлов в общем репозитории нескольких команд</span></div>
+  <div><div>Десятки разработчиков</div><span>в командах со сформированным стилем</span></div>
   <div><div>Отсутствие автоформатирования</div><span></span></div>
-  <div><div>Общие решения Яндекса</div><span>с которыми хотелось интегрироваться</span></div>
+  <div><div>Общие решения Яндекса</div><span>с которыми нужно было интегрироваться</span></div>
 </div>
 
 ::right::
 
 <StickerBoard class="context-sticker-board" seed="format-quorum-context-9" :gap="4">
   <Sticker v-click><b>54 дня</b><span>от первого PR до закрытия финального тикета</span></Sticker>
-  <Sticker v-click><b>66 корнер-кейсов</b><span>отлиты в регрессионные тесты</span></Sticker>
+  <Sticker v-click><b>37 <span class="mono-text">C++</span> кейсов</b><span>зафиксированы в golden-тестах</span></Sticker>
   <Sticker v-click><b>2 итерации</b><span>переформатирования всей кодовой базы</span></Sticker>
   <Sticker v-click><b><span class="mono-text">git clone llvm</span></b><span>модифицированный clang-format</span></Sticker>
   <Sticker v-click><b>5 тикетов</b><span>в поддержку DevTools</span></Sticker>
@@ -104,11 +104,11 @@ split: 36%
 </StickerBoard>
 
 <!--
-54 дня — с 3 июня, когда создан первый config PR 13704587, до 27 июля, когда после merge PR 14610373 закрыт LOGS-5979.
+54 дня — с 3 июня, когда был создан первый config PR 13704587, до 27 июля, когда после merge PR 14610373 закрыли LOGS-5979.
 У PR 13704587 было 10 опубликованных ревизий.
-В репозитории хранится 37 <span class="mono-text">C++</span> golden-тестов; ещё 13 baseline-кейсов относятся к Python, поэтому 66 кодом не подтверждается.
-Пять профильных обращений в Dev Tools: DEVTOOLSSUPPORT-87826, 88104, 88109, 89634 и 90407.
-DEVTOOLSSUPPORT-90347 про MSan и 87777 про доступ к CI в счёт не входят.
+В репозитории хранится 37 C++ golden-тестов.
+Пять профильных обращений в DevTools: DEVTOOLSSUPPORT-87826, 88104, 88109, 89634 и 90407.
+DEVTOOLSSUPPORT-90347 про MSan и 87777 про доступ к CI в подсчёт не входят.
 1 225 слов — word-level diff по PR 13833762, 13904435, 13931060, 14684189 и 14758449; Markdown и README, без fenced code blocks, URL и служебной разметки.
 -->
 
@@ -118,18 +118,24 @@ layout: center
 
 # Проблемы
 
-<div class="workflow-needs">
-  <div v-click><b>Огромное количество корнер-кейсов</b><span>которые обнаруживаются только на реальном коде.</span></div>
-  <div v-click><b>Регрессии читаемости</b><span>доработка конфига приводила к ухудшению ранее сформированного стиля</span></div>
-  <div v-click><b>Честное сравнение</b><span>прогонять разные конфиги и formatter'ы на одном наборе примеров</span></div>
-  <div v-click><b>Командное обсуждение</b><span>показать вариант на встрече, быстро изменить опцию и вместе принять решение</span></div>
-</div>
+<v-clicks>
 
-<div v-click class="callout workflow-needs-callout">Нужно было общее пространство для эксперимента, проверки и принятия решения.</div>
+- Реальные корнер-кейсы вместо синтетических примеров
+- Быстрые эксперименты с версиями, конфигурациями и форматтерами
+- Регрессионный корпус, защищающий уже согласованный стиль
+- Честное сравнение вариантов на одном наборе примеров
+- Сложно договориться о едином стиле
+- Интеграция со сборкой, style-тестами и внутренними инструментами
+
+</v-clicks>
 
 <!--
-Нужен был не ещё один способ отредактировать конфиг, а полный рабочий цикл.
-Эксперимент должен быть быстрым, прошлые договорённости — исполняемыми, сравнение — воспроизводимым, а обсуждение — удобным для всей команды.
+Клик 1: реальные проблемы форматирования обнаруживаются на коде команды, а не на одном специально подготовленном примере.
+Клик 2: нужно быстро менять конфигурацию, версию или сам форматтер и сразу видеть результат.
+Клик 3: уже согласованные решения должны сохраняться как регрессионный корпус и защищаться от случайных изменений.
+Клик 4: разные варианты нужно прогонять на одном наборе примеров, иначе сравнение получается нечестным.
+Клик 5: разработчики по-разному представляют единый стиль; решение сложно обсудить, согласовать и зафиксировать для всей команды.
+Клик 6: итоговое решение должно интегрироваться со сборкой, style-тестами и внутренними инструментами команды.
 -->
 
 ---
@@ -139,92 +145,143 @@ footer: false
 
 # Решение
 
-<Image src="/assets/format-quorum-demo.png" width="800%"/>
+<Image class="fq-solution-image" src="/assets/format-quorum-demo.png" width="800%"/>
 
----
-layout: image-right
-image: /assets/playground-overview.png
----
+<div v-click="1" class="fq-tour-label" style="left: 210px; top: 88px;">Песочница</div>
+<FancyArrow v-click="1" color="#e65353" width="3" head-size="13" roughness="0.6" arc="0.12" duration="500" from="(210, 111)" to="(210, 200)" />
 
-# Playground<MarkerX color="#5D3FD3" title="интерфейс" />
+<div v-click="2" class="fq-tour-label" style="left: 280px; top: 88px;">Тесты</div>
+<FancyArrow v-click="2" color="#e65353" width="3" head-size="13" roughness="0.6" arc="-0.12" duration="500" from="(280, 111)" to="(280, 200)" />
 
-- выбрать formatter и его версию
-- вставить исходный код
-- увидеть результат и line diff
-- сохранить состояние в shareable URL
+<div v-click="3" class="fq-tour-label" style="left: 333px; top: 88px;">Конфиг</div>
+<FancyArrow v-click="3" color="#e65353" width="3" head-size="13" roughness="0.6" arc="0.12" duration="500" from="(333, 111)" to="(333, 200)" />
+
+<div v-click="4" class="fq-tour-label" style="left: 518px; top: 88px;">Выбор инструмента</div>
+<FancyArrow v-click="4" color="#e65353" width="3" head-size="13" roughness="0.6" arc="0.1" duration="500" from="(518, 111)" to="(518, 200)" />
+
+<div v-click="5" class="fq-tour-label" style="left: 845px; top: 88px;">Запустить и сравнить</div>
+<FancyArrow v-click="5" color="#e65353" width="3" head-size="13" roughness="0.6" arc="-0.12" duration="500" from="(845, 111)" to="(845, 200)" />
+
+<style scoped>
+.fq-solution-image {
+  transform: translateY(36px);
+}
+
+.fq-tour-label {
+  position: absolute;
+  z-index: 30;
+  transform: translateX(-50%);
+  color: #111;
+  font-family: var(--slidev-code-font-family);
+  font-size: 12px;
+  font-weight: 600;
+  line-height: 1;
+  white-space: nowrap;
+}
+</style>
 
 <!--
-Показываю слева намеренно плохо оформленный фрагмент, справа — результат выбранной версии.
-Состояние formatter, версии, теста и вкладки сохраняется в shareable URL.
+Клик 1: показываю Песочницу для одного эксперимента.
+Клик 2: перехожу к Тестам — накопленной спецификации поведения.
+Клик 3: открываю Конфиг для настройки форматтера.
+Клик 4: фиксирую выбор инструмента — язык, форматтер и версия.
+Клик 5: запускаю форматирование и сразу сравниваю исходный код с результатом.
 -->
 
 ---
 layout: image-right
 image: /assets/tests-overview.png
+image-width: 50%
 ---
 
-# Тесты правил<MarkerX color="#5D3FD3" title="интерфейс" />
+# Тесты
 
-- статусы pass, fail и muted
-- запуск одного теста или всего набора
-- фактический результат рядом с ожидаемым
-- прямая ссылка на конкретный кейс
+<v-clicks>
+
+- Единый контекст запуска: язык, форматтер, версия и конфигурация
+- Входной код, ожидаемый и фактический результаты рядом
+- Запуск всего набора или отдельного теста со статусами pass, fail и mute
+- Создание тестов, заметки, прямые ссылки и полноэкранный просмотр кода
+- Матрица тестирования по версиям и конфигурациям
+
+</v-clicks>
 
 <!--
-Это не unit-тест реализации Format Quorum, а спецификация поведения formatter.
-Тест можно запустить отдельно, раскрыть фактический результат, заглушить и отправить прямой ссылкой.
+Клик 1: тесты используют единый настраиваемый контекст — язык, форматтер, версия и выбранная конфигурация.
+Клик 2: раскрытый тест показывает входной код, ожидаемый и фактический результаты рядом.
+Клик 3: можно запустить весь набор или один тест; каждый тест проходит, падает или временно отключён.
+Клик 4: тесты создаются прямо в интерфейсе. У каждого есть заметка, стабильный идентификатор и прямая ссылка. Если три колонки тесны, удерживаем Option и наводим курсор на секцию кода — она раскрывается на весь экран крупным шрифтом.
+Клик 5: матрица показывает результаты тестов на разных версиях и конфигурациях.
 -->
 
 ---
-layout: image-right
-image: /assets/config-editor.png
+layout: center
 ---
 
-# Конфиг и его влияние<MarkerX color="#5D3FD3" title="интерфейс" />
+# А ещё…
 
-- выбранная версия formatter'а
-- локальный draft в браузере
-- сравнение live и candidate
-- история и публикация готового изменения
+<Image v-click="1" class="detail-card detail-card--history" src="/assets/config-history-detail.png" width="520px" />
+<Image v-click="2" class="detail-card detail-card--matrix" src="/assets/version-matrix-detail.png" width="450px" />
+<Image v-click="3" class="detail-card detail-card--versions" src="/assets/clang-format-versions.png" width="310px" />
+<Image v-click="4" class="detail-card detail-card--impact" src="/assets/config-impact-detail.png" width="440px" />
+
+<style scoped>
+h1 {
+  position: absolute;
+  top: 38px;
+  left: 56px;
+  margin: 0;
+}
+
+.detail-card {
+  position: absolute;
+  translate: 0 0;
+  transform: rotate(var(--detail-rotation));
+  transform-origin: center;
+  transition:
+    opacity 260ms ease,
+    transform 520ms cubic-bezier(0.2, 0.8, 0.2, 1);
+}
+
+.detail-card.slidev-vclick-hidden {
+  opacity: 0;
+  transform: translateY(-110px) rotate(calc(var(--detail-rotation) - 5deg)) scale(0.95);
+}
+
+.detail-card--history {
+  --detail-rotation: -2deg;
+  top: 112px;
+  left: 56px;
+  z-index: 1;
+}
+
+.detail-card--matrix {
+  --detail-rotation: 2.5deg;
+  top: 55px;
+  left: 500px;
+  z-index: 2;
+}
+
+.detail-card--versions {
+  --detail-rotation: 1.5deg;
+  top: 224px;
+  left: 152px;
+  z-index: 3;
+}
+
+.detail-card--impact {
+  --detail-rotation: -2.5deg;
+  top: 254px;
+  left: 470px;
+  z-index: 4;
+}
+</style>
 
 <!--
-Правка сначала остаётся в localStorage и применяется к следующим локальным запускам.
-Другие пользователи не увидят её до Publish, поэтому эксперимент не затирает общее состояние.
-What-if запускает live и candidate config, затем показывает только переходы pass/fail и muted would pass.
--->
-
----
-layout: image-right
-image: /assets/version-matrix.png
----
-
-# Version matrix<MarkerX color="#5D3FD3" title="интерфейс" />
-
-- строки — тестовые кейсы
-- столбцы — версии и shadow-конфиги
-- ячейки — pass, fail или muted
-- неожиданный переход сразу бросается в глаза
-
-<!--
-Shadow config использует тот же бинарник, но имеет отдельный конфиг и ведёт себя как квази-версия.
-Матрица сразу показывает неожиданные регрессии и muted-тесты, которые уже можно включить.
--->
-
----
-layout: image-right
-image: /assets/config-history.png
----
-
-# Версии и история<MarkerX color="#5D3FD3" title="интерфейс" />
-
-- опубликованные изменения append-only
-- Load возвращает версию в новый draft
-- shadow живёт рядом с основной конфигурацией
-- сравнение не требует нового бинарника
-
-<!--
-Каждое опубликованное изменение конфига становится новой записью истории.
-Откат не уничтожает прошлое: выбранная версия загружается как следующий draft.
+Клик 1: история опубликованных версий конфигурации и возможность загрузить прошлую версию в новый черновик.
+Клик 2: матрица показывает поведение тестов на разных версиях и shadow-конфигурациях.
+Клик 3: версии clang-format и shadow-конфигурации можно добавлять и удалять прямо из интерфейса.
+Клик 4: Check impact заранее показывает, какие кейсы новая конфигурация исправит, а какие сломает.
 -->
 
 ---
@@ -236,8 +293,8 @@ class: fq-accent-slide
 
 <div class="feature-metrics">
   <div><b>13</b><span>языков</span></div>
-  <div><b>14</b><span>встроенных formatter'ов</span></div>
-  <div><b>200</b><span>BEFORE → AFTER кейсов</span></div>
+  <div><b>14</b><span>встроенных форматтеров</span></div>
+  <div><b>200</b><span>кейсов <span class="mono-text">BEFORE → AFTER</span></span></div>
 </div>
 
 <div class="chips">
@@ -245,102 +302,52 @@ class: fq-accent-slide
   <span>Prettier</span><span>shfmt</span><span>Taplo</span><span>google-java-format</span>
 </div>
 
-<div class="callout">Formatter, версия и конфиг — независимые оси эксперимента.</div>
-
 <!--
-Числа проверены по текущему реестру и git-корпусу на 20 августа 2026.
-В production дополнительно зарегистрирован один пользовательский formatter.
+Числа проверены по текущему реестру и git-корпусу на 20 августа 2026 года.
+В продакшене дополнительно зарегистрирован один пользовательский форматтер.
 -->
 
 ---
 layout: center
 ---
 
-# Свой formatter — без форка<MarkerX color="#c87800" title="deployment" />
+# Приходите :)
 
-<div class="custom-binary-lead">Разворачиваете Format Quorum внутри команды — загружайте собственные бинарники.</div>
+<v-clicks>
 
-<div class="custom-binary-flow">
-  <div>
-    <small>1 · Upload</small>
-    <b>Бинарник + версия</b>
-    <span>и язык, для которого он работает</span>
-  </div>
-  <strong>→</strong>
-  <div>
-    <small>2 · Registry</small>
-    <b>Обычный formatter</b>
-    <span>со своим runner и конфигом</span>
-  </div>
-  <strong>→</strong>
-  <div>
-    <small>3 · Use</small>
-    <b>Playground · Tests</b>
-    <span>версии, matrix и история</span>
-  </div>
-</div>
+- Авторизация и команды
+- Вопросы и голосования
+- Локальный CLI
+- Изоляция бинарников в проде
+- Удобнее работать с конфигами
 
-<div class="custom-binary-guard"><code>ALLOW_BINARY_UPLOAD=1</code><span>Только для доверенного локального окружения: загруженный бинарник выполняется на сервере.</span></div>
+</v-clicks>
 
 <!--
-Источники: backend/main.py, formatter_registry.py, custom_formatter_store.py и versions.py.
-Пользовательский formatter сохраняется, регистрируется в общем Formatter Registry и получает UploadOnlyInstall с собственной осью версий.
-Uploads выключены по умолчанию, потому что сервер будет исполнять загруженный код. Для локального доверенного deployment включаются через ALLOW_BINARY_UPLOAD=1.
--->
-
----
-layout: center
----
-
-# Что получилось<MarkerX color="#50C878" title="результат" />
-
-<div class="result-grid">
-  <div><b>200</b><span>проверяемых примеров вместо потерянных комментариев</span></div>
-  <div><b>13</b><span>языков в одной модели formatter → config → tests</span></div>
-  <div><b>37</b><span><span class="mono-text">C++</span>-кейсов, выросших из реальной обратной связи</span></div>
-  <div><b>1</b><span>безопасное место для экспериментов до массового PR</span></div>
-</div>
-
-<div class="callout">Главный эффект — решения стали воспроизводимыми и сравнимыми.</div>
-
-<!--
-Не заявляю экономию времени без измерений.
-Подтверждённый результат — структура данных, набор кейсов, поддерживаемые formatter'ы и завершённая доставка patched clang-format.
--->
-
----
-layout: center
----
-
-# Следующий шаг — настоящее quorum<MarkerX color="#5D3FD3" title="планы" />
-
-<div class="quorum-roadmap">
-  <div><small>ПРОБЛЕМНЫЙ КОД</small><b>один тест-кейс</b></div>
-  <span>→</span>
-  <div><small>ВОПРОС</small><b>как он должен выглядеть?</b></div>
-  <span>→</span>
-  <div><small>ВАРИАНТЫ</small><b>A · B · C</b></div>
-  <span>→</span>
-  <div class="primary"><small>QUORUM</small><b>голоса команды</b></div>
-</div>
-
-<div v-click class="roadmap-outcome">Выбранный вариант становится ожидаемым результатом регрессионного теста.</div>
-
-<!--
-Главное направление развития — добавить голосование поверх тест-кейсов.
-Можно взять проблемный фрагмент, предложить несколько вариантов результата и собрать решение команды прямо в Format Quorum.
-После достижения quorum выбранный вариант фиксируется как expected и дальше защищается регрессионным запуском.
+Клик 1: для голосований нужна идентичность — авторизация, командные пространства и роли. Это же защищает от небезопасных анонимных изменений и загрузок.
+Клик 2: поверх проблемного кейса задаём конкретный вопрос, предлагаем варианты результата и собираем голоса до кворума.
+Клик 3: выбранный командой вариант можно автоматически сохранить как expected и превратить в новый регрессионный тест.
+Клик 4: открытый issue #20 — отдельный CLI с полной функциональностью офлайн, без сервера: https://github.com/alchemmist/format-quorum/issues/20
+Клик 5: issue #18 — авторизация и изоляция пользовательских бинарников; issues #11 и #9 — сборка образов в CI и проверка целостности: https://github.com/alchemmist/format-quorum/issues/18, https://github.com/alchemmist/format-quorum/issues/11, https://github.com/alchemmist/format-quorum/issues/9
+Клик 6: issues #6 и #5 — подсветка редактора с учётом синтаксиса конфига и общая конфигурация Prettier: https://github.com/alchemmist/format-quorum/issues/6, https://github.com/alchemmist/format-quorum/issues/5
+Бэклог проверен 24 августа 2026 года.
 -->
 
 ---
 layout: qr-links
 ---
 
+::title::
+
+<h1 class="mono-text">Thanks & QA</h1>
+
+::default::
+
 <QrLink
   icon-src="/assets/format-quorum-favicon.svg"
   href="https://fq.alchemmist.xyz"
-  label="Format Quorum"
-  alt="QR-код live demo Format Quorum"
+  label="Demo"
+  alt="QR-код демоверсии Format Quorum"
 />
 
 ::right::
@@ -355,10 +362,21 @@ layout: qr-links
 <QrLink
   icon-src="/assets/alchemmist-logo.svg"
   href="https://alchemmist.xyz"
-  label="Блог"
+  label="Blog"
   alt="QR-код блога Антона Гришина"
+/>
+<QrLink
+  href="https://alchemmist.github.io/talks/27-08-2026/"
+  label="Slides"
+  alt="QR-код слайдов доклада о Format Quorum"
+/>
+<QrLink
+  icon-src="/assets/telegram-logo.svg"
+  href="https://t.me/alchemmist"
+  label="Text me"
+  alt="QR-код Telegram @alchemmist"
 />
 
 <!--
-Оставляю экран открытым для вопросов. Кликабельны только адреса под QR-кодами.
+Оставляю экран открытым для вопросов. Кликабельны только подписи над QR-кодами.
 -->
