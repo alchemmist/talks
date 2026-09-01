@@ -1,5 +1,5 @@
 {
-	"packageManager": "pnpm@11.22.0",
+	"packageManager": "pnpm@11.25.0",
 	"devDependencies": {
 		"@playwright/test": "^1.62.1",
 		"prettier": "^3.8.1",
