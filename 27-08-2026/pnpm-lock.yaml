@@ -18,8 +18,8 @@ importers:
         specifier: latest
         version: 0.25.0
       slidev-addon-fancy-arrow:
-        specifier: ^0.18.0
-        version: 0.18.0(typescript@6.0.3)
+        specifier: ^0.20.0
+        version: 0.20.1(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.41(typescript@6.0.3))
       slidev-theme-alchemmist:
         specifier: github:alchemmist/slidev-theme-alchemmist#f3a1070
         version: https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.41(typescript@6.0.3))
@@ -1283,6 +1283,7 @@ packages:
   '@slidev/cli@52.19.1':
     resolution: {integrity: sha512-r1QmwgVu4d4bXIl2yp8K36FrjDFHa9EUdYiNSV8N+QpOTJZ82zh5dcZ3ML+nmavCNenYgoWhUqo+bfLhMpt8jA==}
     engines: {node: '>=20.12.0'}
+    hasBin: true
     peerDependencies:
       playwright-chromium: ^1.10.0
       vite-plugin-pwa: ^1.0.0
@@ -2233,6 +2234,7 @@ packages:
 
   devframe@0.8.2:
     resolution: {integrity: sha512-oodQXEQnrvufA1so/E058Z3SG3bk9AlUE5+NIAsyx5ZJH9P/oX6WMxjC0bs5PPwtKbS7pBHjxja2AD8EwGE8/Q==}
+    hasBin: true
     peerDependencies:
       '@modelcontextprotocol/client': ^2.0.0
       '@modelcontextprotocol/server': ^2.0.0
@@ -2575,6 +2577,7 @@ packages:
   h3@2.0.1-rc.26:
     resolution: {integrity: sha512-GDxlvDsKxgjRvG5UBRJYyGJTMWLV30CJ4cV+e7QCTgftDHihrvio1fVPbNembhEr6J4WNm8IWy3fookgyTweLw==}
     engines: {node: '>=20.11.1'}
+    hasBin: true
     peerDependencies:
       crossws: ^0.4.9
     peerDependenciesMeta:
@@ -3674,8 +3677,14 @@ packages:
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
-  slidev-addon-fancy-arrow@0.18.0:
-    resolution: {integrity: sha512-EMCg+wf5E7j7I3JgHeW2vocjZm7fkht8AZgxIrn+tvO9uR2nt54zDTnrrcFXoz4Om7jtg3KVVxHiLkI6RH5fsA==}
+  slidev-addon-fancy-arrow@0.20.1:
+    resolution: {integrity: sha512-+zFVelXrn6uZWMb+3QGwqYM2La15+auEOL5WTpoJ+/CfDfbT0MBz+ZrCTRFHumF2C+p4RE+wAHp/04vvbwdnhA==}
+    peerDependencies:
+      '@slidev/client': ^51.0.0 || ^52.0.0
+      vue: ^3.5.0
+    peerDependenciesMeta:
+      '@slidev/client':
+        optional: true
 
   slidev-theme-alchemmist@https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700:
     resolution: {gitHosted: true, integrity: sha512-PxHOhqwTYgsVypHyKwVjOGI/1ycYPk6gZ2q6hf3x5U2sftB+qXHrY9reW2eKdOjVySnmYAPmUs4ValfmVPfGEQ==, tarball: https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700}
@@ -4053,6 +4062,7 @@ packages:
 
   update-browserslist-db@1.3.1:
     resolution: {integrity: sha512-ZZ61DsRsOnakl74HAmp3oSN4aXUmEWXf+i/yv0h7tIBfICc3VdrFErQKUUKPgu3AMsTUMbcongALEN4l6GSUrQ==}
+    hasBin: true
     peerDependencies:
       browserslist: '>= 4.21.0'
 
@@ -4121,6 +4131,7 @@ packages:
   vite@8.2.1:
     resolution: {integrity: sha512-EU/eS7BH3XROHh2YnBefjM6DBKA6ZeMZEYQbj7NLWg5wHYlhB8B/Mayd5XsgWq+NFYccDOTemRpdETWR6Ka/lw==}
     engines: {node: ^20.19.0 || >=22.12.0}
+    hasBin: true
     peerDependencies:
       '@types/node': ^20.19.0 || >=22.12.0
       '@vitejs/devtools': ^0.4.0
@@ -8703,12 +8714,12 @@ snapshots:
 
   sisteransi@1.0.5: {}
 
-  slidev-addon-fancy-arrow@0.18.0(typescript@6.0.3):
+  slidev-addon-fancy-arrow@0.20.1(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.41(typescript@6.0.3)):
     dependencies:
       roughjs: 4.6.6
       vue: 3.5.41(typescript@6.0.3)
-    transitivePeerDependencies:
-      - typescript
+    optionalDependencies:
+      '@slidev/client': 52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
 
   slidev-theme-alchemmist@https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.41(typescript@6.0.3)):
     dependencies:
