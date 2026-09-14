@@ -12,10 +12,10 @@ with open("assets/alchemmist-logo.svg", "rb") as file:
     logo = base64.b64encode(file.read()).decode("ascii")
 
 
-def read_metadata(name: str) -> tuple[str, str]:
+def read_metadata(name: str) -> tuple[str, str, str]:
     readme = os.path.join(name, "README.md")
     if not os.path.exists(readme):
-        return name, ""
+        return name, "", ""
 
     with open(readme, encoding="utf-8") as file:
         lines = file.readlines()
@@ -26,16 +26,19 @@ def read_metadata(name: str) -> tuple[str, str]:
 
         title = line[2:].strip()
         description = ""
+        video_url = ""
         for candidate in lines[index + 1 :]:
             candidate = candidate.strip()
+            if re.match(r"^(?:видео|video):", candidate, re.IGNORECASE):
+                video_url = candidate.split(":", 1)[1].strip()
+                continue
             if candidate.startswith("#"):
                 break
-            if candidate:
+            if candidate and not description:
                 description = candidate
-                break
-        return title, description
+        return title, description, video_url
 
-    return name, ""
+    return name, "", ""
 
 
 entries = []
@@ -45,17 +48,19 @@ for name in sorted(os.listdir(".")):
         continue
 
     date = datetime.strptime(name, "%d-%m-%Y")
-    title, description = read_metadata(name)
-    entries.append((date, name, title, description))
+    title, description, video_url = read_metadata(name)
+    entries.append((date, name, title, description, video_url))
 
 entries.sort(reverse=True)
 
 items = []
-for date, folder, title, description in entries:
+for date, folder, title, description, video_url in entries:
     safe_folder = html.escape(folder, quote=True)
     safe_title = html.escape(title)
     safe_description = html.escape(description)
+    safe_video_url = html.escape(video_url, quote=True)
     description_html = f'<p class="description">{safe_description}</p>' if safe_description else ""
+    video_html = f'<a href="{safe_video_url}">[Video]</a>' if safe_video_url else ""
     items.append(
         f"""
         <article class="talk">
@@ -67,6 +72,7 @@ for date, folder, title, description in entries:
           <nav class="talk-links" aria-label="Materials for {safe_title}">
             <a href="{safe_folder}/">[Slides]</a>
             <a href="{safe_folder}.pdf">[PDF]</a>
+            {video_html}
           </nav>
         </article>
         """

@@ -14,6 +14,15 @@ make new-private
 Both commands prompt for a date in `DD-MM-YYYY` format and create the talk in
 the appropriate repository.
 
+To show a recording next to a talk on the public index, add an optional line to
+the talk's `README.md`:
+
+```md
+Video: https://www.youtube.com/watch?v=example
+```
+
+The Russian `Видео:` label is supported as well.
+
 Generate an SVG QR code with an optional icon in the center:
 
 ```bash
