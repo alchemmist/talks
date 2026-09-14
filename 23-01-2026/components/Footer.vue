@@ -1,52 +1,42 @@
 <template>
-  <footer class="slidev-footer">
-    <div class="left" v-if="!hideLogos">
-      <img src="/assets/cu-logo.svg" alt="Central University" />
-    </div>
-
-    <div v-if="!hideDate && date" class="right mono-text">
-      {{ date }}
-    </div>
-  </footer>
+  <AlchemmistFooter
+    logo-src="/assets/cu-logo.svg"
+    logo-alt="Central University"
+  >
+    <template #right>
+      <div class="footer-meta">
+        <a
+          href="https://github.com/alchemmist/talks"
+          target="_blank"
+          rel="noopener noreferrer"
+          aria-label="Talks repository on GitHub"
+        >
+          <carbon:logo-github />
+        </a>
+        <span class="mono-text">{{ date }}</span>
+      </div>
+    </template>
+  </AlchemmistFooter>
 </template>
 
 <script setup lang="ts">
-import { computed } from 'vue'
-import { useSlideContext } from '@slidev/client'
+import { computed } from "vue";
+import { useSlideContext } from "@slidev/client";
 
-const props = defineProps<{
-  hideDate?: boolean
-  hideLogos?: boolean
-}>()
+const { $slidev, $frontmatter } = useSlideContext();
 
-const { $slidev, $frontmatter } = useSlideContext()
-
-const date = computed(() => $frontmatter.date ?? $slidev.configs.date ?? '')
-
-const hideLogos = computed(() => props.hideLogos ?? $frontmatter.hideLogos ?? false)
-const hideDate = computed(() => props.hideDate ?? $frontmatter.hideDate ?? false)
+const date = computed(() => $frontmatter.date ?? $slidev.configs.date ?? "");
 </script>
 
 <style scoped>
-.slidev-footer {
-  display: flex;
-  justify-content: space-between;
+.footer-meta {
   align-items: center;
-}
-
-.slidev-footer .left img {
-  height: 1.5rem;
-}
-
-.left {
   display: flex;
-  gap: 1cm;
+  gap: 1rem;
 }
 
-.slidev-footer .right {
-  font-size: 0.9rem;
-  color: var(--slidev-footer-color, #555);
+.footer-meta a {
+  display: inline-flex;
+  font-size: 1.35rem;
 }
 </style>
-
-
