@@ -179,8 +179,8 @@ importers:
         specifier: ^0.20.0
         version: 0.20.2(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue-router@4.6.4(vue@3.5.44(typescript@6.0.3)))(vue@3.5.44(typescript@6.0.3))
       slidev-theme-alchemmist:
-        specifier: github:alchemmist/slidev-theme-alchemmist#f3a1070
-        version: https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.44(typescript@6.0.3))
+        specifier: github:alchemmist/slidev-theme-alchemmist#f466289
+        version: https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f466289ccf96e20e72988a5647ccc33db8c9d63d(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.44(typescript@6.0.3))
       vue:
         specifier: ^3.5.27
         version: 3.5.44(typescript@6.0.3)
@@ -212,6 +212,7 @@ packages:
   '@antfu/ni@30.5.0':
     resolution: {integrity: sha512-VwQoM9qF1dzDrye55b1qIBeLr4zQ1a5wZQMPCe496HTiquViBZqxtNBaq98WX3ze5kC9Yl7gKSU4W2vtLztxYw==}
     engines: {node: '>=20.19.0'}
+    hasBin: true
 
   '@antfu/utils@9.3.0':
     resolution: {integrity: sha512-9hFT4RauhcUzqOE4f1+frMKLZrgNog5b06I7VmZQV1BkvwvqrbC8EBZf3L1eEL2AKb6rNKjER0sEvJiSP1FXEA==}
@@ -1701,6 +1702,7 @@ packages:
 
   '@unocss/cli@66.8.0':
     resolution: {integrity: sha512-3ifeKsZPQ0K5+BZfspwRMJAM3o4TXb0VRX4q8o1RESJyLzXoMWUvsycLbfHu7vB1bxL2QsCdwkJBJJMpApcJug==}
+    hasBin: true
 
   '@unocss/config@66.8.0':
     resolution: {integrity: sha512-iW6A4h4PaXADWMskdWvjqodQWPegyRhzzP7JAVt+e8uIgcvreQiq0NseQ1WATHW6/x4DvkpYBud/y4jlXJE2Iw==}
@@ -1919,6 +1921,7 @@ packages:
   acorn@8.18.0:
     resolution: {integrity: sha512-lGq+9yr1/GuAWaVYIHRjvvySG5/4VfKIvC8EWxStPdcDh/Ka7FG3twP6v4d5BkravUilhIAsG4Qj83t02LWUPQ==}
     engines: {node: '>=0.4.0'}
+    hasBin: true
 
   ajv@8.20.0:
     resolution: {integrity: sha512-Thbli+OlOj+iMPYFBVBfJ3OmCAnaSyNn4M1vz9T6Gka5Jt9ba/HIR56joy65tY6kx/FCF5VXNB819Y7/GUrBGA==}
@@ -2033,6 +2036,7 @@ packages:
   browserslist@4.28.8:
     resolution: {integrity: sha512-V2NpofLblG64mfOtSgDhOJESZEGogzDMBv/q+W6oc4LXWP/q75eOXoOaaOu1EOadB9U4Bwx/e0yzbvwKH8zalA==}
     engines: {node: ^6 || ^7 || ^8 || ^9 || ^10 || ^11 || ^12 || >=13.7}
+    hasBin: true
 
   buffer-from@1.1.2:
     resolution: {integrity: sha512-E+XQCRwSbaaiChtv6k6Dwgc+bx+Bs6vuKJHHl5kox/BaKbhiXzqQOwK4cO22yElGp2OCmjwVhT3HmxgyPGnJfQ==}
@@ -3067,6 +3071,7 @@ packages:
   jsesc@3.1.0:
     resolution: {integrity: sha512-/sM3dO2FOzXjKQhJuo0Q173wf2KOo8t4I8vHy6lF9poUp7bKT0/NHE8fPX23PwfhnykfqnC2xRxOnVw5XuGIaA==}
     engines: {node: '>=6'}
+    hasBin: true
 
   json-schema-traverse@1.0.0:
     resolution: {integrity: sha512-NM8/P9n3XjXhIZn1lLhkFaACTOURQXjWhV4BA/RnOv8xvgqtqpAX9IO4mRQxSx1Rlo4tqzeqb0sOlruaOy3dug==}
@@ -3074,6 +3079,7 @@ packages:
   json5@2.2.3:
     resolution: {integrity: sha512-XmOWe7eyHYH14cLdVPoyg+GOH3rYX++KpzrylJwSW98t3Nk+U8XOl8FWKOgwtzdb8lXGf6zYwDUzeHMWfxasyg==}
     engines: {node: '>=6'}
+    hasBin: true
 
   jsonfile@6.2.1:
     resolution: {integrity: sha512-zwOTdL3rFQ/lRdBnntKVOX6k5cKJwEc1HdilT71BWEu7J41gXIB2MRp+vxduPSwZJPWBxEzv4yH1wYLJGUHX4Q==}
@@ -3254,6 +3260,7 @@ packages:
 
   markdown-it@14.3.0:
     resolution: {integrity: sha512-RCEsPjR+sr0x+AuYp601tKTkgFG4YEPLCzHST3cQ/fhlJkqAkz1L2/Qbp1j9qw5SBwQHFBoW8+hoN5xssOF0Tw==}
+    hasBin: true
 
   markdown-table@3.0.4:
     resolution: {integrity: sha512-wiYz4+JrLyb/DqW2hkFJxP7Vd7JuTDm77fvbM8VfEQdmSMqcImWeeRbHwZjBjIFki/VaMK2BhFi7oUUZeM5bqw==}
@@ -3763,6 +3770,7 @@ packages:
   rolldown@1.2.4:
     resolution: {integrity: sha512-rSr7irW0K7QRWzjdJXqZowkcRdDtjRduh43rBltnVKd0VFq839l1lJoDvGJb6gl7+4rTTCrPWu+YfujUL8Ug7w==}
     engines: {node: ^20.19.0 || >=22.12.0}
+    hasBin: true
 
   rollup@4.62.5:
     resolution: {integrity: sha512-/tqMfgP7GPA3PHhCmuiS4vIjrSVhHLgY++i+dhbG462euyAj7FpM4D9uq1X3BgjlqRdpcOrYhcQtfiQLNc8tqw==}
@@ -3812,6 +3820,7 @@ packages:
 
   semver@6.3.1:
     resolution: {integrity: sha512-BR7VvDCVHO+q2xBEWskxS6DJE1qRnb7DxzUrogb71CWoSficBxYsiAGd+Kl0mmq/MprG9yArRkyrQxTO6XjMzA==}
+    hasBin: true
 
   semver@7.8.5:
     resolution: {integrity: sha512-Y7/KDsb8LjooZpwaqGyulO6DQlksgCncchHGk+sZIY4SBvUocMBEFH5Ur1fI4dV+Jvl0w6cjvucaIi40puRioA==}
@@ -3885,8 +3894,8 @@ packages:
       '@slidev/client':
         optional: true
 
-  slidev-theme-alchemmist@https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700:
-    resolution: {gitHosted: true, integrity: sha512-PxHOhqwTYgsVypHyKwVjOGI/1ycYPk6gZ2q6hf3x5U2sftB+qXHrY9reW2eKdOjVySnmYAPmUs4ValfmVPfGEQ==, tarball: https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700}
+  slidev-theme-alchemmist@https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f466289ccf96e20e72988a5647ccc33db8c9d63d:
+    resolution: {gitHosted: true, integrity: sha512-rNsNc4buzsbWx1yPjXoGHkUNoKQx+VfV65PwG+UOtTW5MCBETIE0VHjDnc7OSkiG4NpxUb8SRN0Bvys3FzrtmA==, tarball: https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f466289ccf96e20e72988a5647ccc33db8c9d63d}
     version: 0.4.0
     engines: {node: '>=24'}
     peerDependencies:
@@ -3926,6 +3935,7 @@ packages:
   srvx@0.12.5:
     resolution: {integrity: sha512-IuvtDNQg5EIwv3c6dleyau7u8hCyGQ7D6+V/QM799Aud07z0wCUcurKLTRfyG33C8oUY+UWcVBFkfHMcbtmRLA==}
     engines: {node: '>=20.16.0'}
+    hasBin: true
 
   statuses@1.5.0:
     resolution: {integrity: sha512-OpZ3zP+jT1PI7I8nemJX4AKmAX070ZkYPVWV/AaKTJl+tXCTGyVdC1a4SL8RUQYEwk/f34ZX8UTykN68FwrqAA==}
@@ -4709,7 +4719,7 @@ snapshots:
     dependencies:
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.8
-      '@babel/types': 7.29.8
+      '@babel/types': 7.29.11
     transitivePeerDependencies:
       - supports-color
 
@@ -5228,7 +5238,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.29.7
       '@babel/helper-plugin-utils': 7.29.7
-      '@babel/types': 7.29.8
+      '@babel/types': 7.29.11
       esutils: 2.0.3
 
   '@babel/runtime@7.29.7': {}
@@ -8978,7 +8988,7 @@ snapshots:
     optionalDependencies:
       '@slidev/client': 52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
 
-  slidev-theme-alchemmist@https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f3a10708fb3ca4008c84d495ff9b1136baa27700(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.44(typescript@6.0.3)):
+  slidev-theme-alchemmist@https://codeload.github.com/alchemmist/slidev-theme-alchemmist/tar.gz/f466289ccf96e20e72988a5647ccc33db8c9d63d(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.44(typescript@6.0.3)):
     dependencies:
       '@slidev/client': 52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(lightningcss@1.33.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
       '@slidev/types': 52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(rolldown@1.2.4)(rollup@4.62.5)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
