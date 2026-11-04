@@ -177,7 +177,7 @@ importers:
         version: 0.25.0
       slidev-addon-fancy-arrow:
         specifier: ^0.20.0
-        version: 0.20.2(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(esbuild@0.27.2)(lightningcss@1.33.0)(markdown-it-async@2.2.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.56.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue-router@4.6.4(vue@3.5.44(typescript@6.0.3)))(vue@3.5.44(typescript@6.0.3))
+        version: 0.20.4(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(esbuild@0.27.2)(lightningcss@1.33.0)(markdown-it-async@2.2.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.56.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue-router@5.2.0(@vue/compiler-sfc@3.5.41)(esbuild@0.27.2)(rolldown@1.2.4)(rollup@4.56.0)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))(vue@3.5.44(typescript@6.0.3)))(vue@3.5.44(typescript@6.0.3))
       slidev-theme-alchemmist:
         specifier: ^0.3.2
         version: 0.3.2(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(esbuild@0.27.2)(lightningcss@1.33.0)(markdown-it-async@2.2.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.56.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@slidev/types@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(esbuild@0.27.2)(markdown-it-async@2.2.0)(rolldown@1.2.4)(rollup@4.56.0)(srvx@0.12.5)(typescript@6.0.3)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue@3.5.44(typescript@6.0.3))
@@ -2000,9 +2000,6 @@ packages:
   '@vue/compiler-ssr@3.5.44':
     resolution: {integrity: sha512-xr5gb1JVHlfXJwSlRz1FeP6uxoazdzHuMTVLE7up+4Vrqxk219CvxLPxD9NXBt47yvZW7+p4DXfyp4O1fkByIA==}
 
-  '@vue/devtools-api@6.6.4':
-    resolution: {integrity: sha512-sGhTPMuXqZ1rVOk32RylztWkfXTRhuS7vgAKv0zjqk8gbsHkJ7xfFf+jbySxt7tWObEJwyKaHMikV/WGDiQm8g==}
-
   '@vue/devtools-api@8.2.1':
     resolution: {integrity: sha512-6u4vXBlIBAC1wMplIZgpyPn7uh/s4Bf6F5bMzvLv+EdJ0aHs/+4B7Ygv864EStQSjRbsRzTko/kUG1A1IejQ3A==}
 
@@ -3603,11 +3600,6 @@ packages:
   muggle-string@0.4.1:
     resolution: {integrity: sha512-VNTrAak/KhO2i8dqqnqnAHOa3cYBwXEZe9h+D5h/1ZqFSTEFHdM65lR7RoIqq3tBBYavsOXV84NoHXZ0AkPyqQ==}
 
-  nanoid@3.3.18:
-    resolution: {integrity: sha512-DTg4MJbGMWkfi6VZFdNt2/caMbQy4Ou+Op/hJQvGEWcnVfoA1QA+xzRKAzw9jD6+GVOOeYr/mIcuDSdug6F6+w==}
-    engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
-    hasBin: true
-
   nanoid@3.3.20:
     resolution: {integrity: sha512-uKdg2G3GNCKQn9byYOpxbGqrT2fGO5KRt5J/8b3pok8rT6qxGWF6hxMyJiEYtAf+FVyYuD9hRaDqX5uPFYJ4ZQ==}
     engines: {node: ^10 || ^12 || ^13.7 || ^14 || >=15.0.1}
@@ -3798,10 +3790,6 @@ packages:
   postcss-selector-parser@7.1.5:
     resolution: {integrity: sha512-KvvtD7SrlBP7dlgkBghEE3r84CABm5SmV2aNcG4oCA+qDnJ/tvKonFVvwWAyyWUEwxuNawdfEAZKP9zM3oZ2Uw==}
     engines: {node: '>=4'}
-
-  postcss@8.5.26:
-    resolution: {integrity: sha512-u82N74LFzG8ca+dD8puPnplTXoGH4fTPpVGuIbt36G3qvNlkvfD0lEAZSxaly3KX8TS/L1A1gsCEmvKmBcVbkQ==}
-    engines: {node: ^10 || ^12 || >=14}
 
   postcss@8.5.32:
     resolution: {integrity: sha512-LJlKCCAUFKOuZxipUdYw1NzIITEsPcgyOG9LkvRJvuKj/bRzbuRY0ARXvL0pWGpsZvn8jku+LMep2eU0seHp8g==}
@@ -4067,12 +4055,12 @@ packages:
   sisteransi@1.0.5:
     resolution: {integrity: sha512-bLGGlR1QxBcynn2d5YmDX4MGjlZvy2MRBDRNHLJ8VI6l6+9FUiyTFNJ0IveOSP0bcXgVDPRcfGqA0pjaqUpfVg==}
 
-  slidev-addon-fancy-arrow@0.20.2:
-    resolution: {integrity: sha512-xd2kZ95rw7mnryxc3QdnEEpiUqhzYcT/CNH/gKMgA/99H1z3Ps8SlzLmWgQxIo0pprOmTiExCQxzzsQ2AogkLg==}
+  slidev-addon-fancy-arrow@0.20.4:
+    resolution: {integrity: sha512-uoXhJCnC6E5NxVKprvLvKlvZWPyCH2KzK/KGfZQuVFiFrOVgb0JSCxkjkpq/P2JrtmMp9zGgrn2npVv/fcma2w==}
     peerDependencies:
-      '@slidev/client': ^51.0.0 || ^52.0.0
+      '@slidev/client': ^51.0.0 || ^52.0.0 || ^53.0.0
       vue: ^3.5.0
-      vue-router: ^4.5.0
+      vue-router: ^4.5.0 || ^5.0.0
     peerDependenciesMeta:
       '@slidev/client':
         optional: true
@@ -4583,11 +4571,6 @@ packages:
     peerDependencies:
       vue: ^3.0.0
 
-  vue-router@4.6.4:
-    resolution: {integrity: sha512-Hz9q5sa33Yhduglwz6g9skT8OBPii+4bFn88w6J+J4MfEo4KRRpmiNG/hHHkdbRFlLBOqxN8y8gf2Fb0MTUgVg==}
-    peerDependencies:
-      vue: ^3.5.0
-
   vue-router@5.2.0:
     resolution: {integrity: sha512-QAC5i0LEb1GLG0LXDQmHu8L7FX12j0KwU/JTKmLQUJMrn04gQdKP6Du+p0QwpHb3iy71vBlqnHQ8WAfOSAWhqw==}
     peerDependencies:
@@ -4906,7 +4889,7 @@ snapshots:
     dependencies:
       '@babel/template': 7.29.7
       '@babel/traverse': 7.29.8
-      '@babel/types': 7.29.8
+      '@babel/types': 7.29.11
     transitivePeerDependencies:
       - supports-color
 
@@ -5425,7 +5408,7 @@ snapshots:
     dependencies:
       '@babel/core': 7.29.7
       '@babel/helper-plugin-utils': 7.29.7
-      '@babel/types': 7.29.8
+      '@babel/types': 7.29.11
       esutils: 2.0.3
 
   '@babel/runtime@7.29.7': {}
@@ -6876,7 +6859,7 @@ snapshots:
       '@vue/shared': 3.5.41
       estree-walker: 2.0.2
       magic-string: 0.30.21
-      postcss: 8.5.26
+      postcss: 8.5.32
       source-map-js: 1.2.1
 
   '@vue/compiler-sfc@3.5.44':
@@ -6900,8 +6883,6 @@ snapshots:
     dependencies:
       '@vue/compiler-dom': 3.5.44
       '@vue/shared': 3.5.44
-
-  '@vue/devtools-api@6.6.4': {}
 
   '@vue/devtools-api@8.2.1':
     dependencies:
@@ -8745,8 +8726,6 @@ snapshots:
 
   muggle-string@0.4.1: {}
 
-  nanoid@3.3.18: {}
-
   nanoid@3.3.20: {}
 
   nanotar@0.3.0: {}
@@ -8941,12 +8920,6 @@ snapshots:
     dependencies:
       cssesc: 3.0.0
       util-deprecate: 1.0.2
-
-  postcss@8.5.26:
-    dependencies:
-      nanoid: 3.3.18
-      picocolors: 1.1.1
-      source-map-js: 1.2.1
 
   postcss@8.5.32:
     dependencies:
@@ -9284,11 +9257,11 @@ snapshots:
 
   sisteransi@1.0.5: {}
 
-  slidev-addon-fancy-arrow@0.20.2(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(esbuild@0.27.2)(lightningcss@1.33.0)(markdown-it-async@2.2.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.56.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue-router@4.6.4(vue@3.5.44(typescript@6.0.3)))(vue@3.5.44(typescript@6.0.3)):
+  slidev-addon-fancy-arrow@0.20.4(@slidev/client@52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(esbuild@0.27.2)(lightningcss@1.33.0)(markdown-it-async@2.2.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.56.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(vue-router@5.2.0(@vue/compiler-sfc@3.5.41)(esbuild@0.27.2)(rolldown@1.2.4)(rollup@4.56.0)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))(vue@3.5.44(typescript@6.0.3)))(vue@3.5.44(typescript@6.0.3)):
     dependencies:
       roughjs: 4.6.6
       vue: 3.5.44(typescript@6.0.3)
-      vue-router: 4.6.4(vue@3.5.44(typescript@6.0.3))
+      vue-router: 5.2.0(@vue/compiler-sfc@3.5.41)(esbuild@0.27.2)(rolldown@1.2.4)(rollup@4.56.0)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))(vue@3.5.44(typescript@6.0.3))
     optionalDependencies:
       '@slidev/client': 52.19.1(@modelcontextprotocol/server@2.0.0)(@nuxt/kit@3.21.11)(@oxc-project/types@0.144.0)(@vitejs/devtools-kit@0.4.12(@modelcontextprotocol/server@2.0.0)(cac@7.0.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0)))(@vue/compiler-sfc@3.5.41)(cac@7.0.0)(esbuild@0.27.2)(lightningcss@1.33.0)(markdown-it-async@2.2.0)(oxc-parser@0.131.0)(rolldown@1.2.4)(rollup@4.56.0)(srvx@0.12.5)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))
 
@@ -9822,7 +9795,7 @@ snapshots:
     dependencies:
       lightningcss: 1.33.0
       picomatch: 4.0.5
-      postcss: 8.5.26
+      postcss: 8.5.32
       rolldown: 1.2.4
       tinyglobby: 0.2.17
     optionalDependencies:
@@ -9839,11 +9812,6 @@ snapshots:
 
   vue-resize@2.0.0-alpha.1(vue@3.5.44(typescript@6.0.3)):
     dependencies:
-      vue: 3.5.44(typescript@6.0.3)
-
-  vue-router@4.6.4(vue@3.5.44(typescript@6.0.3)):
-    dependencies:
-      '@vue/devtools-api': 6.6.4
       vue: 3.5.44(typescript@6.0.3)
 
   vue-router@5.2.0(@vue/compiler-sfc@3.5.41)(esbuild@0.27.2)(rolldown@1.2.4)(rollup@4.56.0)(vite@8.2.1(@types/node@22.20.1)(esbuild@0.27.2)(jiti@2.7.0)(terser@5.50.0)(yaml@2.9.0))(vue@3.5.44(typescript@6.0.3)):
